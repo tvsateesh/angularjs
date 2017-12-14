@@ -1,4 +1,4 @@
-var shoppingCartModule = angular.module("shoppingCart", ['namesList','myApp','angularJsApp','colorApp'])
+var shoppingCartModule = angular.module("shoppingCart", ['namesList','myApp','angularJsApp','colorApp']);
 shoppingCartModule.controller("ShoppingCartController",
                               function($scope) {
     $scope.items = [{
@@ -16,7 +16,7 @@ shoppingCartModule.controller("ShoppingCartController",
     }
 }
                              );
-var namesModule = angular.module("namesList", [])
+var namesModule = angular.module("namesList", []);
 namesModule.controller("NamesController",
                        function($scope) {
     $scope.names = [{
@@ -27,18 +27,18 @@ namesModule.controller("NamesController",
 }
                       );
 
-var app = angular.module('myApp', [])
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
 });
 
-var angularJsApp = angular.module("angularJsApp",[])
+var angularJsApp = angular.module("angularJsApp",[]);
 angularJsApp.controller("MyController", function($scope) {
     $scope.myScope = "Init";
 });
 
-var colorApp = angular.module("colorApp",[])
+var colorApp = angular.module("colorApp",[]);
 colorApp.controller("styleColorCtrl", function($scope){
     $scope.myCol = "lightblue";
 });

@@ -1,4 +1,4 @@
-var shoppingCartModule = angular.module("shoppingCart", [])
+var shoppingCartModule = angular.module("shoppingCart", []);
 shoppingCartModule.controller("ShoppingCartController",
                               function($scope) {
     $scope.items = [{
@@ -16,7 +16,14 @@ shoppingCartModule.controller("ShoppingCartController",
     }
 }
                              );
-var namesModule = angular.module("namesList", [])
+
+shoppingCartModule.directive("shopingCart", function() {
+    return {
+        template : "Shopping Cart Directive Example"
+    };
+});
+
+var namesModule = angular.module("namesList", []);
 namesModule.controller("NamesController",
                        function($scope) {
     $scope.names = [{
@@ -27,20 +34,27 @@ namesModule.controller("NamesController",
 }
                       );
 
-var app = angular.module('myApp', [])
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
 });
 
-var angularJsApp = angular.module("angularJsApp",[])
+var angularJsApp = angular.module("angularJsApp",[]);
 angularJsApp.controller("MyController", function($scope) {
     $scope.myScope = "Init";
 });
 
-var colorApp = angular.module("colorApp",[])
+var colorApp = angular.module("colorApp",[]);
 colorApp.controller("styleColorCtrl", function($scope){
     $scope.myCol = "lightblue";
+});
+
+
+angularJsApp.directive("angularJsApp", function() {
+    return {
+        template : "<h1>Sample directive</h1>"
+    };
 });
 
 angular.bootstrap(document.getElementById("App2"), ['namesList']);

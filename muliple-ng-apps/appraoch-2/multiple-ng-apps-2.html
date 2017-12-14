@@ -4,16 +4,12 @@
 
     <body>
         <div  ng-app="shoppingCart" ng-controller="ShoppingCartController">
-            <h1>Your order</h1>
+            <h1 shoping-cart>Your order</h1>
             <div ng-repeat="item in items">
                 <span>{{item.product_name}}</span>
                 <span>{{item.price | currency}}</span>
                 <button ng-click="remove($index);">Remove</button>
             </div>
-            <div ng-include="app1.html"></div>
-            <div ng-include="app2.html"></div>
-            <div ng-include="app3.html"></div>
-            <div ng-include="app4.html"></div>
 
         </div>
         <div id="App2" ng-app="namesList" ng-controller="NamesController">
@@ -36,10 +32,19 @@
             Full Name: {{firstName + " " + lastName}}
 
         </div>
+        <!--<div id="App4" ng-app="angularJsApp" ng-controller="MyController">
+<div >
+<span>MyScope is {{myScope}}</span>
+</div>
+</div>
+-->
+
         <div id="App4" ng-app="angularJsApp" ng-controller="MyController">
+            <div angular-js-app></div>
             <div >
                 <span>MyScope is {{myScope}}</span>
             </div>
+
         </div>
 
         <div id="Add5" ng-app="colorApp" ng-controller="styleColorCtrl">
