@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <body>
+        <div id="App1" ng-app="shoppingCart" ng-controller="ShoppingCartController">
+            <h1>Your order</h1>
+            <div ng-repeat="item in items">
+                <span>{{item.product_name}}</span>
+                <span>{{item.price | currency}}</span>
+                <button ng-click="remove($index);">Remove</button>
+            </div>
+            <div id="App2" ng-app="namesList" ng-controller="NamesController">
+                <h1>List of Names</h1>
+                <div ng-repeat="_name in names">
+                    <p>{{_name.username}}</p>
+                </div>
+            </div>
+
+            <div id="App3" ng-app="myApp" ng-controller="myCtrl" >
+                <div >
+                    <!-- data binding  -->
+                    <p>Name : <input type="text" ng-model="name"></p>
+                    <h1>Hello {{name}}</h1>
+                    <p>The name is <span ng-bind="firstName"></span></p>
+                    <!-- execute expression -->
+                    <p>My first expression: {{ 5 + 5 }}</p>
+                    First Name: <input type="text" ng-model="firstName"><br>
+                    Last Name: <input type="text" ng-model="lastName"><br>
+                    <br>
+                    Full Name: {{firstName + " " + lastName}}
+
+                </div>
+
+            </div>
+
+            <div id="App4" ng-app="angularJsApp" ng-controller="MyController">
+                <div >
+                    <span>MyScope is {{myScope}}</span>
+                </div>
+            </div>
+
+            <div id="Add5" ng-app="colorApp" ng-controller="styleColorCtrl">
+
+                <p>Change the value of the input field:</p>
+
+                <div >
+
+                    <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+
+                </div>
+
+                <p>AngularJS resolves the expression and returns the result.</p>
+
+                <p>The background color of the input box will be whatever you write in the input field.</p>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>
